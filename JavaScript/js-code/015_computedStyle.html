@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>015_获取计算出的style</title>
+<style type="text/css">
+div{
+	width: 300px;
+	height: 300px;
+	border: 2px dashed black;
+}
+.test1{
+	background: red;
+}
+.test2{
+	background: green;
+}
+
+</style>
+
+</head>
+<body>
+
+	<div class="test1" onclick="alter();" >
+		点击div，使其背景红绿交替，宽 高增加5px
+		
+	</div>
+	
+</body>
+<script type="text/javascript">
+	//获取计算出的style
+	function getStyle(obj,attr){
+		return obj.currentStyle ? obj.currentStyle[attr] :  getComputedStyle(obj,null)[attr] ;
+	}
+	//红绿交替
+	function alter(){
+		var div2 =document.getElementsByTagName('div')[0];		
+		div2.className.indexOf('test1')>=0  ?  div2.className = 'test2'  :  div2.className ='test1';
+		div2.style.width = parseInt(getStyle(div2,'width')) + 5+'px' ;
+		div2.style.height=parseInt(getStyle(div2,'height')) + 5+'px' ;
+		div2.style.borderBottomWidth =parseInt(getStyle(div2,'borderBottomWidth')) + 1+'px' ;
+		
+	}
+</script>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>020_定时炸弹</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+	 function bomb(){
+	 //获取img标签的src属性，将其赋值为新图片
+	 	document.getElementsByTagName('img')[0].src = "images/bomb.jpg" ;
+	 }
+	   //调用window对象的方法
+	 window.setTimeout('bomb()',2000);   //window 可省略
+</script>
+
+</head>
+<body>
+	<img src="images/ball.jpg" alt=''>
+	
+</body>
+</html>

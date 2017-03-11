@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>024_onfocus onblur事件</title>
+<script type="text/javascript">
+	function focusE(){
+		//alert('焦点事件');
+		document.getElementsByName('uername')[0].style.border = '2px solid red' ;
+	}
+	function blurE(){//失去焦点时，还原默认值
+		document.getElementsByName('uername')[0].style.border = '' ;
+	}
+</script>
+</head>
+<body>
+	<p>
+	用户名:&nbsp;<input type="text" name="uername" id="" onfocus="focusE();" onblur="blurE();"/>
+ 	</p>
+	<p>
+	Email: &nbsp; <input type="text" name="email" id=""  />
+	</p>
+</body>
+
+</html>

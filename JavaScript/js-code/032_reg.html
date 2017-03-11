@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>032_正则表达式</title>
+</head>
+<body>
+	<input type="button" value="标注有邮箱地址的人" onclick='find();'>
+
+	<ul>
+		<li>赵</li>
+		<li>钱&lt;qian@baidu.com&gt;</li>
+		<li>孙</li>
+		<li>李&lt;li@163.com&gt;</li>
+	</ul>
+
+</body>
+<script>
+	function find(){
+		
+		//email规则,email 是其中的一部分，需要去掉^ $
+		var pattern = /[a-zA-Z0-9_\.]+@[a-zA-Z0-9-]+[\.a-zA-Z]+/;
+		var i=0;
+		var lis=document.getElementsByTagName('li');
+		while(i< lis.length){
+			if(pattern.exec(lis[i].innerHTML) !==null){
+				lis[i].style.background ='yellow';
+		
+			}
+			i++;
+		}
+	}
+</script>
+</html>

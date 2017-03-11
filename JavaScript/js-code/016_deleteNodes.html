@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>016_删除对象</title>
+
+</head>
+<body>
+<input type="button" value="删除最后一个li" onclick='del();'>
+	<ul>
+		<li>春</li>
+		<li>夏</li>
+		<li>秋</li>
+		<li>冬</li>
+	</ul>
+	
+</body>
+<script type="text/javascript">
+	function del(){
+		var list = document.getElementsByTagName('li'); //获取li标签对象集合
+		var lastli = list[list.length -1]  //集合长度-1，得最后一个li的索引号
+		lastli.parentNode.removeChild(lastli);
+	}
+	
+</script>
+</html>

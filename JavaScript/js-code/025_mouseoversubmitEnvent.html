@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>025_mouseoversubmit事件</title>
+<script type="text/javascript">
+	function overE(){
+		//鼠标经过事件：背景色变黄色
+		document.getElementsByTagName('div')[0].style.background ='yellow' ;
+	}
+	function outE(){
+		//鼠标经过移开：背景色变回原来颜色
+		document.getElementsByTagName('div')[0].style.background ='#252' ;
+	}
+	function submitE(){
+		alert('请填写完整！');
+		return false;
+}
+</script>
+</head>
+<body>
+	<!--写一个div色块，响应鼠标事件变色-->
+	<div style="width:200px;height:200px;background:#252" onmouseover='overE();' onmouseout='outE();'>
+		<h3>onmouseover  onmouseout事件</h3>
+	</div>
+
+	<!--提交的是整个表单，onsubmit事件应该写在此处，而不是写在submit按钮处-->
+	<form action="025_mouseoversubmitEnvent.html" onsubmit='return submitE();'>
+		<!--onsubmit事件稍微特殊，需要在前面加return阻止页面向服务器提交-->
+	<p>
+	用户名:&nbsp;<input type="text" name="uername" id="" >
+ 	</p>
+	<p>
+	Email: &nbsp; <input type="text" name="email" id=""  />
+	</p>
+	<p>
+	<input type="submit" value="提交">
+ 	</p>
+ 	</form>
+</body>
+
+</html>

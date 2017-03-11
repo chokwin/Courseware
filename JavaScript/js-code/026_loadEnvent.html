@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>026_load事件</title>
+<script type="text/javascript">
+	function loadE(){
+		document.getElementsByTagName('p')[0].style.border = '2px solid red';
+	}
+</script>
+</head>
+<body onload='loadE();'>
+	<!--写一个load事件，当页面加载完毕时，p加边框-->
+	<p >body事件发生</p>
+</body>
+
+</html>

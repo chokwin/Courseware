@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>014操作对象</title>
+<style type="text/css">
+
+.test1{
+	background: red;
+}
+.test2{
+	background: green;
+}
+
+</style>
+
+</head>
+<body>
+
+	<div class="test1" onclick="alter();" style='width:300px;height:300px;border-bottom: 1px solid yellow'>
+		点击div，使其背景红绿交替，宽 高增加10px
+		下边框增加1px
+	</div>
+	
+</body>
+<script type="text/javascript">
+	function alter(){
+		var div2 =document.getElementsByTagName('div')[0];		
+		div2.className.indexOf('test1')>=0  ?  div2.className = 'test2'  :  div2.className ='test1';
+		div2.style.width=parseInt(div2.style.width) + 5+'px' ;
+		div2.style.height=parseInt(div2.style.height) + 5+'px' ;
+		div2.style.borderBottomWidth =parseInt(div2.style.borderBottomWidth)+1+'px' ;
+	}
+</script>
+</html>
