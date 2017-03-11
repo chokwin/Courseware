@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>027_结构 行为 样式 相分离</title>
+<style>
+	div{width:300px;height:300px;border:2px solid red;} //样式已经独立出来，行为呢？
+</style>
+</head>
+<body>
+
+	<!--<div onclick='change();' style="width:300px;height:300px;border:2px solid red;">-->
+	<!--这是一个 结构 行为 样式混合在一起的标签，如何实现分离？-->
+	<div>
+		<p>
+			<ul>
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+			</ul>
+		</p>
+	</div>
+</body>
+<script>
+	/*function change(){
+		document.getElementsByTagName('div')[0].style.background ='red';
+	}
+	document.getElementsByTagName('div')[0].onclick =change;
+	//此处不要写成change(),否则，相当于赋值为函数的返回值*/
+	//还可以写成匿名函数
+	document.getElementsByTagName('div')[0].onclick = function (){
+		this.style.background ='green';
+	}
+
+
+</script>
+</html>

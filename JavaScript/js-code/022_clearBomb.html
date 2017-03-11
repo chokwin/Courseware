@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>022_清除定时炸弹</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+	 function bomb(){
+	 	//获取按钮上的时间值
+	 	var btn = document.getElementsByName('btn')[0];
+	 	//将时间值-1
+	 	var time = parseInt(btn.value) ;
+	 	
+	 	//重新赋值给按钮
+	 	btn.value = --time ;
+	 	//当按钮上的时间值为0时，发生图片更换
+	 	if(time==0){
+	 	document.getElementsByTagName('img')[0].src = "images/bomb.jpg" ;
+	 	//清除clock
+	 	clearInterval(clock);
+	 	}
+	 }
+	   // setInterval返回值给变量clock，当time=0时，清除clock
+	 var clock = window.setInterval('bomb()',1000);   
+</script>
+
+</head>
+<body>
+	<img src="images/ball.jpg" alt=''>
+	<input type="button" value="5" name ='btn'>
+</body>
+</html>

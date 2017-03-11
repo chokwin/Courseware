@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>019_联动菜单</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+	
+	//step2.构造一个二维数组，记录省份下面对应的市名
+	var area = [['东城区','崇文区','丰台区','海淀区'],['黄山','合肥','芜湖','安庆','马鞍山']];
+
+	//step1.编写联动菜单函数
+	function LinkageMenu(){
+		var sel = document.getElementById('prov');  //获取用户所选择的列表项的值
+           	//alert(sel.value);	//弹出-1 0 1等值，成功第一步	
+           	var len = area[sel.value].length;
+           	//声明变量opt，用于循环拼接字符串
+           	var opt = ' ' ;
+           	
+           	//step3.当选择的值为-1时的处理
+           	if(sel.value == -1) {
+           		return;
+           	}
+
+           	//循环拼接下属市区字符串，置于option标签内
+           	for (var i = 0; i < len; i++) {
+           		opt += '<option value="'+ i +'">' + area[sel.value][i] + '</option>'  ;
+           	}
+ 		//alert(opt); //测试拼接是否成功
+           //将拼接好的option标签，塞入city下拉列表中
+           document.getElementById('city').innerHTML = opt;
+
+	}
+</script>
+
+</head>
+<body>
+	<!--创建 省直辖市 的下拉列表，onchange事件触发联动菜单函数-->
+	<select name="省" id="prov" onchange="LinkageMenu();">
+		<option value="-1" checked=true>请选择</option>
+		<option value="0">北京</option>
+		<option value="1">安徽</option>
+	</select>
+	<select name="市区" id="city">
+		
+	</select>
+	
+</body>
+</html>

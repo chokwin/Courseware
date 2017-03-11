@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>029_事件对象的获取</title>
+<style>
+	img{
+		left: 0px;
+		top:0px;
+		position: relative; //加此语句，图像才能移动
+	}
+</style>
+</head>
+<body>
+	<img src="images/hanhong.jpg" alt="">
+</body>
+<script>
+	document.getElementsByTagName('img')[0].onclick= function(ev) {
+		 this.style.left = ev.pageX+10+'px ';
+		 this.style.top = ev.pageY+10+'px';
+	
+	};
+</script>
+</html>

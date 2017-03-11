@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>031_正则表达式</title>
+</head>
+<body>
+	<form action="031_reg.html" >
+		用户名：<input type="text" name="username" id="">
+ 		Email：<input type="text" name="email" id="">
+		<input type="submit" value="提交">
+	</form>
+</body>
+<script>
+	document.getElementsByTagName('form')[0].onsubmit =function(){
+		
+		//用户名规则：由6-11位字母数字组成
+		var pattern = /^[a-zA-Z0-9]{6,11}$/;
+		
+		if(!pattern.test(document.getElementsByName('username')[0].value)){
+			alert('用户名由6-11位字母数字组成');
+			return false; // return false,阻止向服务器提交
+		}
+		//email规则
+		pattern = /^[a-zA-Z0-9_\.]+@[a-zA-Z0-9-]+[\.a-zA-Z]+$/;
+
+		if(!pattern.test(document.getElementsByName('email')[0].value)){
+			alert('email地址不正确');
+			return false;
+		}
+	}
+</script>
+</html>

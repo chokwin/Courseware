@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>013找对象</title>
+	
+</head>
+<body>
+	<h1>找对象</h1>	
+	<div id="test1">
+		<p>p1xxx</p>
+		<p>p2yyy</p>
+		<p>p3zzz</p>
+	</div>
+	<div class="test2"></div>
+	<input type="text" name="username"  value='文本'>
+</body>
+<script type="text/javascript">
+	//用id来查询，返回对象
+	//console.log(document.getElementById('test1'));
+
+	//用标签来查询，返回对象集合，哪怕只有一个对象，也是集合
+	//var ps = document.getElementsByTagName('p');
+	   // ps[1].style.background ='rgb(30%,90%,80%)';
+
+//表单用name来查询，返回对象集合
+
+//alert(document.getElementsByName('username')[0].value);
+//document.getElementsByName('username')[0].value = '找对象';
+
+//用类名查询，返回对象集合
+//document.getElementsByClassName('test2')[0].style.background = '#ec0';
+
+
+	//找子节点  childNodes标准属性，包括空白节点，实用性较差。children非标准属性，但兼容性好，且不包含空白节点
+	alert(document.getElementById('test1').childNodes.length);
+	alert(document.getElementById('test1').children.length);
+
+
+		//标准属性，包括空白节点，实用性较差。children非标准属性，但兼容性好，且不包含空白节点)
+
+	//找父节点
+
+	//document.getElementsByTagName('p')[2].parentNode.style.border ='1px solid pink' ;
+</script>
+</html>
